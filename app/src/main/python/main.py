@@ -1,13 +1,12 @@
-from six.moves import input
+from flask import Flask
+app = Flask(__name__)
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
 def main():
-    print("Enter your name, or an empty line to exit.")
-    while True:
-        try:
-            name = input()
-        except EOFError:
-            break
-        if not name:
-            break
-        print("Hello {}!".format(name))
+    app.run(debug=False)
+
+if __name__ == "__main__":
+    main()

@@ -16,7 +16,8 @@ android {
             // buildPython "C:/Python36/python.exe"
 
             pip {
-                install "six"
+                // install "six"
+                install "-r", "requirements.txt"
             }
         }
         ndk {
